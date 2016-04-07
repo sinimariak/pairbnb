@@ -26,8 +26,17 @@ ActiveRecord::Schema.define(version: 20160405034804) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "city"
+    t.string   "hometype"
+    t.string   "roomtype"
+    t.integer  "accommodates"
+    t.date     "available_from"
+    t.date     "available_until"
+    t.decimal  "price"
+    t.string   "currency"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

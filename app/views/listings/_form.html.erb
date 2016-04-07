@@ -1,0 +1,15 @@
+<%= form_for (@listing)  do |f| %>
+
+  <%= f.label :city %> <%= f.text_field :city %><br/>
+  <%= f.label :hometype %> <%= f.text_field :hometype %><br/>
+  <%= f.label :roomtype %> <%= f.text_field :roomtype %><br/>
+  <%= f.label :accommodates %> <%= f.number_field :accommodates %><br/>
+  <%= f.label :available_from %> <%= f.date_field :available_from %><br/>
+  <%= f.label :available_until %> <%= f.date_field :available_until %><br/>
+  <%= f.label :price %> <%= f.number_field :price %><br/>
+  <%= f.label :currency %> <%= f.text_field :currency %><br/>
+
+  <%= f.submit %>
+ 
+ <% end %>
+

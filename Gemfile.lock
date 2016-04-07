@@ -55,6 +55,18 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
+    elasticsearch (1.0.15)
+      elasticsearch-api (= 1.0.15)
+      elasticsearch-transport (= 1.0.15)
+    elasticsearch-api (1.0.15)
+      multi_json
+    elasticsearch-model (0.1.8)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-transport (1.0.15)
+      faraday
+      multi_json
     email_validator (1.6.0)
       activemodel
     erubis (2.7.0)
@@ -175,6 +187,7 @@ DEPENDENCIES
   byebug
   clearance
   coffee-rails (~> 4.1.0)
+  elasticsearch-model
   figaro
   jbuilder (~> 2.0)
   jquery-rails

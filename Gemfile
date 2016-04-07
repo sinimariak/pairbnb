@@ -29,6 +29,8 @@ gem 'figaro'
 #facebook login
 gem 'omniauth'
 gem 'omniauth-facebook'
+#search listings
+gem 'elasticsearch-model'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

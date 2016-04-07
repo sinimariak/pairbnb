@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
+  
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
+
   resource :session, controller: "clearance/sessions", only: [:create]
 
   resources :users, controller: "clearance/users", only: [:create] do
-    resource :password,
-      controller: "clearance/passwords",
+  resource :password, 
+    controller: "clearance/passwords", 
       only: [:create, :edit, :update]
+
   end
+
+  resources :users, only: [:new, :show, :edit, :update, :destroy]
+
+  resources :listings
 
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
@@ -15,11 +22,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'home#index'
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
-
-  resources :users, only: [:show, :edit, :update, :destroy] 
+  # get "/listings#index", to: "listings#index", as: "listings"
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

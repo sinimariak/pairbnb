@@ -1,0 +1,11 @@
+<br><br><br>
+
+<h1>Listings</h1>
+
+<% @listings.each do |listing| %>
+	<%= listing.city %>
+<% end %>
+
+<h2>List your place</h2>
+
+<%= render partial: '/listings/form' %>
