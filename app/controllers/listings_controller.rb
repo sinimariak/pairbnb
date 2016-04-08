@@ -2,11 +2,7 @@ class ListingsController < ApplicationController
 
 	def index
 		@listing = Listing.new
-		if params[:tag]
-			@listings = Listing.tagged_with(params[:tag])
-		else params[:search]
-			@listings = Listing.all
-		end
+		@listings = Listing.all
 	end
 
 	def new
@@ -27,7 +23,7 @@ class ListingsController < ApplicationController
 	end
 
 	def listing_params
-    	params.require(:listing).permit(:city, :hometype, :roomtype, :accommodates, :available_from, :available_until, :price, :currency, :user_id)
+    	params.require(:listing).permit(:title, :city, :hometype, :roomtype, :accommodates, :available_from, :available_until, :price, :currency, :user_id)
     end
 end
 

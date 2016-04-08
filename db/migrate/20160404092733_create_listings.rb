@@ -1,6 +1,7 @@
 class CreateListings < ActiveRecord::Migration
   def change
     create_table :listings do |t|
+    	t.string :title
     	t.string :city
     	t.string :hometype 
     	t.string :roomtype
