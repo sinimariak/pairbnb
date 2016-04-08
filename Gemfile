@@ -30,7 +30,11 @@ gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-facebook'
 #search listings
-gem 'elasticsearch-model'
+gem 'searchkick'
+#to run, follow these steps:
+# 1. In the terminal, run 'elasticsearch'
+# 2. In a separate tab in the terminal, run 'rake searchkick:reindex CLASS=Listing'
+# 3. run 'bundle exec rails s'
 #bootsrap
 gem 'bootstrap-sass', '~> 3.3.6'
 

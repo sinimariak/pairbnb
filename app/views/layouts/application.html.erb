@@ -15,24 +15,23 @@
 <div class="container">
 	<ul class="nav nav-tabs">
 		<li><%=link_to "Home", root_path %></li>
-		<li><%= link_to "My reservations", sign_in_path %></li>
+		<li><%= link_to "My reservations", reservations_path %></li>
 		<li><%= link_to "Become a host", new_listing_path %></li>
-		<li><%= link_to "About Us", "#" %></li>
+		<li><% if signed_in? %><%= link_to "Sign out", sign_out_path, method: :delete %><% end %></li>
+		<li><%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+    		<%= text_field_tag :search, params[:search], placeholder: "Where do you want to go?" %>
+    		<%= submit_tag "Search", :name => nil %></li>
+<% end %>
 	 </ul>
 
 <div class="jumbotron">
   <div class="container">
     <h1>Welcome to myBnB!</h1>
-    <p>My first web app in the making...</p>
+    <p>Under construction...</p>
   </div>
 </div>
 
-
 <%= yield %>
-
-<% if signed_in? %>
-<%= button_to 'Sign out', sign_out_path, method: :delete %>
-<% end %>
 
 </div>
 </div>

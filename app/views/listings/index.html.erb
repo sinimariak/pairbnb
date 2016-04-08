@@ -1,9 +1,6 @@
-<h1>Listings</h1>
+<h1>Listings matching your criteria</h1>
 
 <% @listings.each do |listing| %>
 	<%= listing.title %>
 <% end %>
 
-<h2>List your place</h2>
-
-<%= render partial: '/listings/form' %>

@@ -1,8 +1,8 @@
 class ListingsController < ApplicationController
 
 	def index
-		@listing = Listing.new
-		@listings = Listing.all
+		Listing.reindex
+		@listings = Listing.search(params[:search])
 	end
 
 	def new
@@ -10,9 +10,11 @@ class ListingsController < ApplicationController
 	end
 
 	def create
-		@listing = current_user.listings.new(listing_params)
+		@user = current_user
+
+		@listing = @user.listings.new(listing_params)
 		if @listing.save
-			redirect_to @listing
+			redirect_to listings_path
 		else 
 			redirect_to new_listing_path, alert: "Error creating listing."
 		end

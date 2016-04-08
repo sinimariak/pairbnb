@@ -1,8 +1,7 @@
 <div class='container-fluid'>
 	<div class='home'>
 		<% if current_user %>
-		Signed in as <%= current_user.email %></a>
-		<%= link_to 'Listings', listings_path %>
+		<%= render partial: '/reservations/form' %>
 		<% else %>
 		<%= link_to "Sign in", sign_in_path %><br>
 		Not a member yet? <%= link_to "Sign up", sign_up_path %> now!
