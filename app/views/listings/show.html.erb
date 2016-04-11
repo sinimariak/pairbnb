@@ -1,10 +1,15 @@
-@listings.each do |listing|
+<h1>Complete the booking for your stay in <%= @listing.city %></h1>
 
-<li><%= listing.title %> <%= "in" %> <%= @listing.city %><br> <%= listing.image %></li>
+<%= @listing.title %><br> <%= image_tag @listing.image.url.to_s %><br>
 
-Book this!
+Home type: <%= @listing.hometype %><br>
+Room type: <%= @listing.roomtype %><br>
+Accommodates: <%= @listing.accommodates %> people<br>
+Availability: from <%= @listing.available_from %> until <%= @listing.available_until %><br>
+Price: <%= @listing.price %> <%= @listing.currency %><br>
+Listed by <%= link_to "#{@listing.user.first_name}", user_path(@listing.user_id) %><br><br>
 
-<% end %>
 
-<%= link_to "All listings", listings_path %>
 <%= link_to "Back", listings_path %>
+
+ 

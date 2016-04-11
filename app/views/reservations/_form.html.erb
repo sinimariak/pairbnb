@@ -1,6 +1,5 @@
 <%= form_for (:reservation)  do |f| %>
 
-	<%= f.label :city, "Where do you want to go?" %> <%= f.text_field :city %><br/>
 	<%= f.label :guests, "How many are you?" %> <%= f.number_field :guests %><br/>
 	<%= f.label :check_in %> <%= f.date_field :check_in %><br/>	
 	<%= f.label :check_out %> <%= f.date_field :check_out %><br/>
