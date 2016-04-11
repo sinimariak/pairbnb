@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 	has_many :listings, :dependent => :destroy
 	has_many :reservations, :dependent => :destroy
   include Clearance::User
+
+  mount_uploader :avatar, AvatarUploader
  
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|

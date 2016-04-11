@@ -14,13 +14,15 @@
 
 <div class="container">
 	<ul class="nav nav-tabs">
-		<li><%=link_to "Home", root_path %></li>
+	<% if signed_in? %>
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "My profile", user_path(current_user.id) %></li>
 		<li><%= link_to "My reservations", reservations_path %></li>
 		<li><%= link_to "Become a host", new_listing_path %></li>
-		<li><% if signed_in? %><%= link_to "Sign out", sign_out_path, method: :delete %><% end %></li>
+		<li><%link_to "Sign out", sign_out_path, method: :delete %></li>
 		<li><%= form_tag(listings_path, :method => "get", id: "search-form") do %>
     		<%= text_field_tag :search, params[:search], placeholder: "Where do you want to go?" %>
-    		<%= submit_tag "Search", :name => nil %></li>
+    		<%= submit_tag "Search", :name => nil %></li><% end %>
 <% end %>
 	 </ul>
 

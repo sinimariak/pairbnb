@@ -37,6 +37,9 @@ gem 'searchkick'
 # 3. run 'bundle exec rails s'
 #bootsrap
 gem 'bootstrap-sass', '~> 3.3.6'
+#image upload 
+gem 'rmagick'
+gem 'carrierwave'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

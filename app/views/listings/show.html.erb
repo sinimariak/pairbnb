@@ -1,5 +1,10 @@
-<h1>New listing</h1>
+@listings.each do |listing|
 
-<%= @listing.title %> <%= "in" %> <%= @listing.city %><br>
+<li><%= listing.title %> <%= "in" %> <%= @listing.city %><br> <%= listing.image %></li>
 
+Book this!
+
+<% end %>
+
+<%= link_to "All listings", listings_path %>
 <%= link_to "Back", listings_path %>
