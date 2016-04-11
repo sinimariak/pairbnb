@@ -1,1 +1,7 @@
 <h1>My reservations</h1>
+
+<% current_user.reservations.each do |reservation| %>
+	<%= reservation.listing.city %><br>
+	<%= link_to "#{reservation.listing.user.first_name}", user_path(reservation.listing.user_id) %>
+	<% end %>
+

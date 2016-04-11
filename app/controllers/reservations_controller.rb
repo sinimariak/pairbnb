@@ -10,11 +10,11 @@ class ReservationsController < ApplicationController
 	end
 
 	def create
-		@reservation = current_user.reservation.new(reservation_params)
+		@reservation = current_user.reservations.new(reservation_params)
 		if @reservation.save
-		redirect_to reservations_path alert: "Booked!"
+		redirect_to user_reservations_path(current_user.id)
 		else 
-		redirect_to root_path alert: "Error creating listing."
+		redirect_to root_path
 		end
     end
 

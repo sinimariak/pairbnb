@@ -9,6 +9,7 @@ Availability: from <%= @listing.available_from %> until <%= @listing.available_u
 Price: <%= @listing.price %> <%= @listing.currency %><br>
 Listed by <%= link_to "#{@listing.user.first_name}", user_path(@listing.user_id) %><br><br>
 
+<%= render partial: '/reservations/form' %>
 
 <%= link_to "Back", listings_path %>
 

@@ -22,6 +22,7 @@ class ListingsController < ApplicationController
 
     def show
     	@listing = Listing.find(params[:id])
+    	@reservation = @listing.reservations.new
 	end
 
 	def listing_params
