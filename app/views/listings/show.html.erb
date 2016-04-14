@@ -1,7 +1,7 @@
 <div class="container">
 	<h1>Complete the booking for your stay in <%= @listing.city %></h1>
 
-	<%= @listing.title %><br> <%= image_tag @listing.image.url.to_s %><br>
+	<h2><%= @listing.title %></h2><br> <%= image_tag @listing.image.url.to_s %><br>
 
 	Home type: <%= @listing.hometype %><<br>
 	Room type: <%= @listing.roomtype %><br>

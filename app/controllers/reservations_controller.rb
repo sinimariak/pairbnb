@@ -11,7 +11,9 @@ class ReservationsController < ApplicationController
 
 	def create
 		@reservation = current_user.reservations.new(reservation_params)
+		@user = @reservation.user
 		if @reservation.save
+		ReservationMailer.reservation_email(@user).deliver_now
 		redirect_to new_transaction_path
 		else 
 		redirect_to root_path

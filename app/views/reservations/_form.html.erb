@@ -1,6 +1,5 @@
 <%= form_for [@listing, @reservation], url: listing_reservations_path(@listing) do |f| %>
 
-	<%= f.label :guests, "How many are you?" %> <%= f.number_field :guests %><br>
 	<%= f.label :check_in %> <%= f.date_field :check_in %><br>	
 	<%= f.label :check_out %> <%= f.date_field :check_out %><br>
 	<%= f.hidden_field :listing_id, value: @listing.id %>
