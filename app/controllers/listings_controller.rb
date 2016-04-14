@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
 		@user = current_user
 		@listing = @user.listings.new(listing_params)
 		if @listing.save
-			redirect_to listings_path
+			redirect_to listing_path(current_user.id)
 		else 
 			redirect_to new_listing_path, alert: "Error creating listing."
 		end

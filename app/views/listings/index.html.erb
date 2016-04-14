@@ -1,10 +1,14 @@
 <div class="container">
-	<h1>Listings matching your criteria</h1>
+	<h1 class="border-bottom">Listings matching your criteria</h1>
 
 	<% @listings.each do |listing| %>
-		<ul><%= listing.title %></ul>
-		<ul><%= image_tag listing.image.url.to_s %></ul>
-		<%= link_to "Book this!", listing %>
+		<ul><h3><%= listing.title %></h3></ul>
+		<ul><% if listing.image.present? %>
+		<%= image_tag listing.image.url.to_s %>
+		<% else %>
+		<%= image_tag 'no_image.jpg', :class => "no_image" %><br>
+		<% end %></ul>
+		<ul><%= link_to "Book this!", listing, :class => "btn btn-primary" %></ul>
 	<% end %>
 </div>
 
