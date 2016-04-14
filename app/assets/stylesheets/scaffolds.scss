@@ -1,9 +1,9 @@
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  background: url('https://pixabay.com/static/uploads/photo/2016/03/31/08/46/abstract-1292261_960_720.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 p, ol, ul, td {

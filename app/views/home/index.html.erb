@@ -1,11 +1,40 @@
-<!-- <div class='container-fluid'>
-	<div class='home'>
-		% if current_user %>
-		%= render partial: '/reservations/form' %>
-		% else %>
-		%= link_to "Sign in", sign_in_path %><br>
-		Not a member yet? %= link_to "Sign up", sign_up_path %> now!
-		% end %>
-	</div>
+<div class="container">
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag 'background.jpg' %>
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'bike.jpg' %>
+      <div class="carousel-caption" %>
+        <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'sugarloaf.jpg' %>
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
 </div>
- -->
