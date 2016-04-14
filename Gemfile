@@ -40,7 +40,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 #image upload 
 gem 'rmagick'
 gem 'carrierwave'
-
+gem "mini_magick"
+#payment system
 gem 'gon'
 gem 'braintree'
 # Use ActiveModel has_secure_password

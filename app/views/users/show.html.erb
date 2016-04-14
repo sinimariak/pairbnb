@@ -1,7 +1,7 @@
 <div class="container">	
-	<%= image_tag @user.avatar.url.to_s %>
+	<%= image_tag @user.avatar.url.to_s, :class => "round" %>
 	<h1><%= @user.first_name %> <% @user.last_name %></h1>
-	<% if @user.id = current_user.id %><br>
+	<% if @user.id = current_user.id %>
 	<%= link_to "Edit profile", edit_user_path(current_user.id), class: "btn btn-default" %>
 	<% end %>
 </div>
