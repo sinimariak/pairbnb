@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
 	def create
 		@reservation = current_user.reservations.new(reservation_params)
 		if @reservation.save
-		redirect_to user_reservations_path(current_user.id)
+		redirect_to new_transaction_path
 		else 
 		redirect_to root_path
 		end

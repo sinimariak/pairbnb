@@ -4,39 +4,57 @@
   <title>Pairbnb</title>
 
   <!-- Latest compiled and minified CSS -->
-
+<%= include_gon %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'vendor/modernizr', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 
 </head>
-<body>
+<body class="background">
 
 <div class="container">
 	<ul class="nav nav-tabs">
 	<% if signed_in? %>
 		<li><%= link_to "Home", root_path %></li>
+		<% unless current_user.first_name.nil? %>
 		<li><%= link_to "My profile", user_path(current_user.id) %></li>
+		<% else %>
+		<li><%= link_to "Edit profile", edit_user_path(current_user.id) %></li><% end %>
 		<li><%= link_to "My reservations", user_reservations_path(current_user.id) %></li>
 		<li><%= link_to "Become a host", new_listing_path %></li>
-		<li><%link_to "Sign out", sign_out_path, method: :delete %></li>
-		<li><%= form_tag(listings_path, :method => "get", id: "search-form") do %>
-    		<%= text_field_tag :search, params[:search], placeholder: "Where do you want to go?" %>
-    		<%= submit_tag "Search", :name => nil %></li><% end %>
-<% end %>
+		<li><%= link_to "Sign out", sign_out_path, method: :delete %></li>
+	<% else %>
+		<li><%= link_to "Log in", sign_in_path %></li>
+		<li><%= link_to "Sign up", sign_up_path %></li>
+	<% end %>
 	 </ul>
+</div>
 
 <div class="jumbotron">
-  <div class="container">
-    <h1>Welcome to myBnB!</h1>
-    <p>Under construction...</p>
-  </div>
+	<div class="container">
+    	<h1>Welcome to myBnB!</h1>
+   	 	<p>Under construction...</p>
+   	 </div>
 </div>
 
+<div class="container">
+	<div class="center">
+	<% if signed_in? %>
+	<%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Where do you want to go?", :class => "searchbar" %>
+	<%= date_field_tag :search, params[:search] %>
+	<%= date_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name => nil %><% end %><% end %>
+</div>
+</div>
+<br>
 <%= yield %>
 
-</div>
-</div>
-
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
 </html>

@@ -16,3 +16,37 @@
 
 @import "bootstrap";
 @import "main";
+
+.background {
+	background: white;
+}
+
+.searchbar {
+	width: 500px;
+}
+
+.center {
+	padding:auto;
+	margin:auto;
+	text-align:center;
+}
+
+.jumbotron {
+	color: red;
+}
+
+.nav-tabs a { 
+	color: red;
+
+}
+
+.form-align {
+	position: relative;
+    left: 30px;
+}
+
+.carousel {
+	height: 80%;
+	width: 80%;
+	margin: auto;
+}

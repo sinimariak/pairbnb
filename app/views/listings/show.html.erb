@@ -1,3 +1,4 @@
+<div class="form-align">
 <h1>Complete the booking for your stay in <%= @listing.city %></h1>
 
 <%= @listing.title %><br> <%= image_tag @listing.image.url.to_s %><br>
@@ -12,5 +13,7 @@ Listed by <%= link_to "#{@listing.user.first_name}", user_path(@listing.user_id)
 <%= render partial: '/reservations/form' %>
 
 <%= link_to "Back", listings_path %>
+
+</div>
 
  
