@@ -1,10 +1,8 @@
-<div class="form-align">
-<div id="clearance">
-  <h2><%= t(".title") %></h2>
-
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
-  <% end %>
-
-</div>
+<div class="container">
+	<div id="clearance">
+		<h2><%= t(".title") %></h2>	
+		<%= form_for @user do |form| %>
+		<%= render partial: '/users/form', object: form %>
+		<% end %>
+	</div>
 </div>

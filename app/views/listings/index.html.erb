@@ -1,9 +1,10 @@
-<h1>Listings matching your criteria</h1>
+<div class="container">
+	<h1>Listings matching your criteria</h1>
 
-<% @listings.each do |listing| %>
-	<ul><%= listing.title %></ul>
-	<ul><%= image_tag listing.image.url.to_s %></ul>
-	<%= link_to "Book this!", listing %>
-<% end %>
-
+	<% @listings.each do |listing| %>
+		<ul><%= listing.title %></ul>
+		<ul><%= image_tag listing.image.url.to_s %></ul>
+		<%= link_to "Book this!", listing %>
+	<% end %>
+</div>
 
