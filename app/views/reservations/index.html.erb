@@ -1,9 +1,11 @@
-<div class=form-align>
+<div class="container">
+<div class="form-align">
 <h1>My reservations</h1>
 
 <% current_user.reservations.each do |reservation| %>
-	<%= reservation.listing.city %><br>
-	<%= link_to "#{reservation.listing.user.first_name}", user_path(reservation.listing.user_id) %>
+	<%= reservation.listing.title %> in <%= reservation.listing.city %><br>
+	Listed by: <%= link_to "#{reservation.listing.user.first_name}", user_path(reservation.listing.user_id) %> <br><br>
 	<% end %>
+</div>
 </div>
 

@@ -1,5 +1,7 @@
-<div class="form-align">
-<ul><%= image_tag @user.avatar.url.to_s %></ul>
-
-<%= @user.first_name %> <% @user.last_name %>
+<div class="container">	
+	<%= image_tag @user.avatar.url.to_s %>
+	<h1><%= @user.first_name %> <% @user.last_name %></h1>
+	<% if @user.id = current_user.id %><br>
+	<%= link_to "Edit profile", edit_user_path(current_user.id), class: "btn btn-default" %>
+	<% end %>
 </div>

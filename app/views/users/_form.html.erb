@@ -12,8 +12,8 @@
     <%= form.password_field :password, type: 'password', class: 'form-control', id: 'inputPassword3', placeholder: 'password'%>
     </div>
   </div>
-  <div class="form-group">
-    <div class="col-sm-2 col-sm-10">
+  <div class="searchbar">
+    <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <label>
           <input type="checkbox"> Remember me
@@ -21,9 +21,9 @@
       </div>
     </div>
   </div>
-  <div class="form-group">
-    <div class="col-sm-2 col-sm-10">
-    <%= form.submit 'Sign up', class: "btn btn-default" %>
+  <div class="searchbar">
+    <div class="col-sm-offset-2">
+    <%= form.submit 'Sign up', class: "btn btn-danger" %><br>
     <%= link_to "Already a user?", sign_in_path %>
     </div>
   </div>

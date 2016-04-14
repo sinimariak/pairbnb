@@ -15,14 +15,17 @@
 <div class="container">
 	<ul class="nav nav-tabs">
 	<% if signed_in? %>
+		<div class="nav navbar-nav navbar-left">
 		<li><%= link_to "Home", root_path %></li>
 		<% unless current_user.first_name.nil? %>
 		<li><%= link_to "My profile", user_path(current_user.id) %></li>
 		<% else %>
 		<li><%= link_to "Edit profile", edit_user_path(current_user.id) %></li><% end %>
 		<li><%= link_to "My reservations", user_reservations_path(current_user.id) %></li>
-		<li><%= link_to "Become a host", new_listing_path %></li>
-		<li><%= link_to "Sign out", sign_out_path, method: :delete %></li>
+		<li><%= link_to "Become a host", new_listing_path %></li></div>
+		<div class="nav navbar-nav navbar-right">
+		<li><%= link_to "#{current_user.first_name}", user_path(current_user.id) %></li>
+		<li><%= link_to "Sign out", sign_out_path, method: :delete %></li></div>
 	<% else %>
 		<li><%= link_to "Log in", sign_in_path %></li>
 		<li><%= link_to "Sign up", sign_up_path %></li>

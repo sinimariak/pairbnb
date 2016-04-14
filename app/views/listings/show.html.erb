@@ -1,18 +1,18 @@
-<div class="form-align">
-<h1>Complete the booking for your stay in <%= @listing.city %></h1>
+<div class="container">
+	<h1>Complete the booking for your stay in <%= @listing.city %></h1>
 
-<%= @listing.title %><br> <%= image_tag @listing.image.url.to_s %><br>
+	<%= @listing.title %><br> <%= image_tag @listing.image.url.to_s %><br>
 
-Home type: <%= @listing.hometype %><br>
-Room type: <%= @listing.roomtype %><br>
-Accommodates: <%= @listing.accommodates %> people<br>
-Availability: from <%= @listing.available_from %> until <%= @listing.available_until %><br>
-Price: <%= @listing.price %> <%= @listing.currency %><br>
-Listed by <%= link_to "#{@listing.user.first_name}", user_path(@listing.user_id) %><br><br>
+	Home type: <%= @listing.hometype %><<br>
+	Room type: <%= @listing.roomtype %><br>
+	Accommodates: <%= @listing.accommodates %> people<br>
+	Availability: from <%= @listing.available_from %> until <%= @listing.available_until %><br>
+	Price: <%= @listing.price %> <%= @listing.currency %><br>
+	Listed by <%= link_to "#{@listing.user.first_name}", user_path(@listing.user_id) %><br><br>
 
-<%= render partial: '/reservations/form' %>
+	<%= render partial: '/reservations/form' %>
 
-<%= link_to "Back", listings_path %>
+	<%= link_to "Back", listings_path %>
 
 </div>
 
