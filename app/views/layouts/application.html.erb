@@ -44,12 +44,10 @@
 </div>
 
 <div class="container">
-	<div class="center">
+	<div class="center" "search">
 	<% if signed_in? %>
 	<%= form_tag(listings_path, :method => "get", id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Where do you want to go?", :class => "searchbar" %>
-	<%= date_field_tag :search, params[:search] %>
-	<%= date_field_tag :search, params[:search] %>
 	<%= submit_tag "Search", :name => nil %><% end %><% end %>
 </div>
 </div>

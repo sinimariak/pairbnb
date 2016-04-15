@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
 
 	def new
  	gon.client_token = generate_client_token
- 	@reservation = Reservation.find_by(user_id: current_user.id)
+ 	@reservation = Reservation.where(user_id: current_user.id).last
  	@listing = Listing.find(@reservation.listing_id)
  	length_of_stay = @reservation.check_out - @reservation.check_in
   @total_price = @listing.price.to_s.to_f.round(2) * length_of_stay
@@ -19,7 +19,7 @@ class TransactionsController < ApplicationController
       gon.client_token = generate_client_token
       render :new
     end
-  	end
+  end
 
 	private
 	def generate_client_token
